@@ -146,13 +146,26 @@ pre {
 
 .eyebrow,
 .code-label,
-.note-kicker {
+.note-kicker,
+.note-meta {
   margin: 0 0 0.85rem;
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   font-size: 0.78rem;
   font-weight: 800;
+}
+
+.eyebrow,
+.code-label,
+.note-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.note-meta {
+  margin-top: -0.2rem;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 h1,
