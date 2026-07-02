@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KiloLock | Terraform state without the global lock.</title>
+  <meta
+    name="description"
+    content="KiloLock is an open-source Terraform and OpenTofu HTTP backend with PostgreSQL-backed state, queryable history, and foundations for narrower coordination in large shared states.">
+  <link rel="icon" type="image/svg+xml" href="assets/kilolock-icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="assets/kilolock-icon.svg" alt="">
+        <span>KiloLock</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#why">Why it exists</a>
+        <a href="#links">Links</a>
+        <a href="#notes">Engineering Notes</a>
+      </nav>
+      <a class="header-link" href="https://github.com/kilolockio/kilolock">GitHub</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Open-source and self-hostable</p>
+          <h1>Terraform state without the global lock.</h1>
+          <p class="lead">
+            KiloLock is an open-source Terraform and OpenTofu backend built for teams that want ordinary HTTP backend compatibility today, better state visibility immediately, and a more careful path beyond whole-state coordination as shared infrastructure grows.
+          </p>
+          <p class="lead lead-secondary">
+            It stores state in PostgreSQL rather than treating it only as a flat blob, which makes queryable history, inspection workflows, and foundations for narrower locking and repair possible without changing the first adoption step.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://github.com/kilolockio/kilolock">View on GitHub</a>
+            <a class="button secondary" href="https://kilolock.dev">Read the docs</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Backend example">
+          <div class="mini-card">
+            <h2>Short version</h2>
+            <ul class="plain-list">
+              <li>Open source under Apache 2.0.</li>
+              <li>Self-hostable with a standard HTTP backend flow.</li>
+              <li>Compatible with vanilla Terraform and OpenTofu.</li>
+              <li>Designed around large shared states and better operator visibility.</li>
+            </ul>
+          </div>
+          <div class="code-card">
+            <p class="code-label">Example backend</p>
+            <pre><code>terraform {
+  backend "http" {
+    address        = "https://backend.example/v1/state/main"
+    lock_address   = "https://backend.example/v1/state/main"
+    unlock_address = "https://backend.example/v1/state-unlock/main"
+  }
+}</code></pre>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Overview</p>
+          <h2>Start with a normal backend. Keep room for deeper workflows.</h2>
+          <p>
+            The low-risk path is intentionally simple: point Terraform or OpenTofu at KiloLock as an HTTP backend and keep working. The deeper model is there when query, history, and large-state coordination become the hard part.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="card">
+            <h3>Hosted backend</h3>
+            <p>
+              If you want a managed service rather than operating the backend yourself, KiloLock Cloud offers a hosted path built on the same project foundation.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Open source and self-hostable</h3>
+            <p>
+              The core project is open source, self-hostable, and meant to stay understandable to operators who want direct control over where their state lives.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Built for large states</h3>
+            <p>
+              KiloLock is shaped by the reality that some infrastructure really does remain one large shared state, and that backend tooling should help teams inspect and coordinate it more carefully.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section section-alt">
+      <div class="wrap split">
+        <div>
+          <div class="section-heading">
+            <p class="eyebrow">Why KiloLock exists</p>
+            <h2>Because some teams outgrow blob storage long before they outgrow Terraform.</h2>
+          </div>
+          <p class="section-copy">
+            Standard remote state backends do an important job, but they tend to treat state as one file to fetch, lock, and write back wholesale. That model is workable for many teams, yet it becomes increasingly awkward when the state is large, shared, and operationally important.
+          </p>
+          <p class="section-copy">
+            KiloLock exists to make that terrain calmer: PostgreSQL-backed state instead of only flat snapshots, queryable history instead of blind blob inspection, and foundations for narrower coordination without pretending that every advanced workflow is already finished.
+          </p>
+        </div>
+        <div class="stack">
+          <article class="note-panel">
+            <h3>What it tries to improve</h3>
+            <ul class="plain-list">
+              <li>Visibility into current and historical state.</li>
+              <li>Repair and inspection workflows around specific resources.</li>
+              <li>Safer coordination patterns for large shared states.</li>
+              <li>A path beyond one global lock, without hype.</li>
+            </ul>
+          </article>
+          <article class="note-panel note-panel-soft">
+            <h3>What it does not claim</h3>
+            <p>
+              KiloLock is not presented as a complete replacement for every Terraform platform or as a promise that parallel apply is universally solved. The project is deliberately narrower and more technical than that.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="links" class="section">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Links</p>
+          <h2>Project, documentation, and hosted path</h2>
+        </div>
+
+        <div class="docs-grid">
+          <a class="doc-card" href="https://github.com/kilolockio/kilolock">
+            <strong>GitHub</strong>
+            <span>Source, issues, ADRs, examples, and the self-hosted core.</span>
+          </a>
+          <a class="doc-card" href="https://kilolock.dev">
+            <strong>kilolock.dev</strong>
+            <span>Technical docs, quickstarts, CLI references, and architecture notes.</span>
+          </a>
+          <a class="doc-card" href="https://kilolock.cloud">
+            <strong>KiloLock Cloud</strong>
+            <span>A hosted backend path for teams that want managed operations.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="notes" class="section section-alt">
+      <div class="wrap split">
+        <div>
+          <div class="section-heading">
+            <p class="eyebrow">Engineering Notes</p>
+            <h2>Small technical writing, kept close to the project.</h2>
+          </div>
+          <p class="section-copy">
+            This section is reserved for short articles about state storage, query workflows, backend design, and the tradeoffs behind narrower locking models.
+          </p>
+        </div>
+        <div class="notes-list">
+          <article class="note-entry">
+            <p class="note-kicker">Planned</p>
+            <h3>Why PostgreSQL-backed state changes what you can inspect</h3>
+            <p>A short overview of the difference between flat snapshot storage and queryable resource history.</p>
+          </article>
+          <article class="note-entry">
+            <p class="note-kicker">Planned</p>
+            <h3>What “without the global lock” actually means</h3>
+            <p>A careful note on current capabilities, boundaries, and where KiloLock is still intentionally conservative.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>KiloLock is open source under the Apache 2.0 license.</p>
+      <div class="footer-links">
+        <a href="https://github.com/kilolockio/kilolock">GitHub</a>
+        <a href="https://github.com/kilolockio/kilolock/blob/main/LICENSE">Apache 2.0</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
