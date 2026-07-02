@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   role="img"
+   aria-labelledby="title desc"
+   version="1.1"
+   id="svg14"
+   sodipodi:docname="kilolock-icon.svg"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.0746367"
+     inkscape:cx="195.41488"
+     inkscape:cy="223.33129"
+     inkscape:window-width="1512"
+     inkscape:window-height="829"
+     inkscape:window-x="0"
+     inkscape:window-y="33"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g14" />
+  <title
+     id="title">Kilolock icon</title>
+  <desc
+     id="desc">A geometric lock built from angled infrastructure-style blocks, with a K-shaped negative space in the center.</desc>
+  <defs
+     id="defs9">
+    <linearGradient
+       id="frame"
+       x1="96"
+       y1="72"
+       x2="416"
+       y2="440"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#204b57"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#0f2f39"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       id="topFace"
+       x1="136"
+       y1="136"
+       x2="352"
+       y2="136"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#2cb79e"
+         id="stop3" />
+      <stop
+         offset="1"
+         stop-color="#198972"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       id="leftFace"
+       x1="116"
+       y1="176"
+       x2="256"
+       y2="388"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#19907a"
+         id="stop5" />
+      <stop
+         offset="1"
+         stop-color="#106553"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       id="rightFace"
+       x1="256"
+       y1="176"
+       x2="396"
+       y2="388"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#145f51"
+         id="stop7" />
+      <stop
+         offset="1"
+         stop-color="#0c3b33"
+         id="stop8" />
+    </linearGradient>
+    <filter
+       id="shadow"
+       x="-0.17837838"
+       y="-0.15172414"
+       width="1.3567568"
+       height="1.3551724"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="22"
+         result="blur"
+         id="feGaussianBlur8" />
+      <feOffset
+         in="blur"
+         dx="0"
+         dy="18"
+         result="offsetBlur"
+         id="feOffset8" />
+      <feFlood
+         flood-color="#10262d"
+         flood-opacity="0.24"
+         result="shadowColor"
+         id="feFlood8" />
+      <feComposite
+         in="shadowColor"
+         in2="offsetBlur"
+         operator="in"
+         result="shadow"
+         id="feComposite8" />
+      <feMerge
+         id="feMerge9">
+        <feMergeNode
+           in="shadow"
+           id="feMergeNode8" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode9" />
+      </feMerge>
+    </filter>
+  </defs>
+  <g
+     filter="url(#shadow)"
+     id="g14">
+    <path
+       d="M176 170c0-57 36-94 80-94s80 37 80 94v30h-38v-30c0-35-19-57-42-57s-42 22-42 57v30h-38z"
+       fill="url(#frame)"
+       id="path9" />
+    <path
+       d="m 146,188 h 220 l 38,38 -25.67007,196.76434 H 135.18443 L 108.93032,228.47131 Z"
+       fill="url(#leftFace)"
+       id="path10"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       d="M366 188h-220l-38 38 148 198 148-198-38-38z"
+       fill="url(#rightFace)"
+       opacity=".95"
+       id="path11" />
+    <path
+       d="M146 188l110-46 110 46-110 46z"
+       fill="url(#topFace)"
+       id="path12" />
+    <rect
+       x="210"
+       y="226"
+       width="34"
+       height="160"
+       rx="6"
+       fill="#f3fbf8"
+       id="rect13" />
+    <path
+       d="m 287,226 h 40 l -58,79 -19,-27 z"
+       fill="#f3fbf8"
+       id="path13" />
+    <path
+       d="m 250.38906,305 h 27 l 61,81 h -42 l -46,-60 z"
+       fill="#f3fbf8"
+       id="path15" />
+    <path
+       d="m 250,276 25,29 -25,29 z"
+       fill="url(#rightFace)"
+       id="path16" />
+    <path
+       d="M256 142l110 46 38 38-20 27-30-30-98-41-98 41-30 30-20-27 38-38z"
+       fill="#effaf7"
+       opacity=".16"
+       id="path14" />
+  </g>
+</svg>
