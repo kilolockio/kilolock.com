@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KiloLock | Terraform state without the global lock.</title>
+  <title>KiloLock | Own your state.</title>
   <meta
     name="description"
-    content="KiloLock is an open-source Terraform and OpenTofu HTTP backend with PostgreSQL-backed state, queryable history, and foundations for narrower coordination in large shared states.">
+    content="KiloLock is a self-hosted HTTP backend for Terraform and OpenTofu, backed by PostgreSQL. Use vanilla Terraform today. Add queryable history, conflict visibility, and smarter locking workflows when you need them.">
   <link rel="icon" type="image/svg+xml" href="assets/kilolock-icon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
   <link rel="shortcut icon" href="assets/favicon.ico">
@@ -34,12 +34,12 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Open-source and self-hostable</p>
-          <h1>Terraform state without the global lock.</h1>
+          <h1>Own your state.</h1>
           <p class="lead">
-            KiloLock is an open-source Terraform and OpenTofu backend built for teams that want ordinary HTTP backend compatibility today, better state visibility immediately, and a more careful path beyond whole-state coordination as shared infrastructure grows.
+            Open-source Terraform/OpenTofu state backend you can self-host.
           </p>
           <p class="lead lead-secondary">
-            It stores state in PostgreSQL rather than treating it only as a flat blob, which makes queryable history, inspection workflows, and foundations for narrower locking and repair possible without changing the first adoption step.
+            KiloLock is a self-hosted HTTP backend for Terraform and OpenTofu, backed by PostgreSQL. Use vanilla Terraform today. Add queryable history, conflict visibility, and smarter locking workflows when you need them.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="https://github.com/kilolockio/kilolock">View on GitHub</a>
@@ -54,7 +54,7 @@
               <li>Open source under Apache 2.0.</li>
               <li>Self-hostable with a standard HTTP backend flow.</li>
               <li>Compatible with vanilla Terraform and OpenTofu.</li>
-              <li>Designed around large shared states and better operator visibility.</li>
+              <li>Adds queryable history, conflict visibility, and operator-friendly workflows when you want them.</li>
             </ul>
           </div>
           <div class="code-card">
@@ -75,9 +75,9 @@
       <div class="wrap">
         <div class="section-heading">
           <p class="eyebrow">Overview</p>
-          <h2>Start with a normal backend. Keep room for deeper workflows.</h2>
+          <h2>Start with a normal backend. Keep full control of your state.</h2>
           <p>
-            The low-risk path is intentionally simple: point Terraform or OpenTofu at KiloLock as an HTTP backend and keep working. The deeper model is there when query, history, and large-state coordination become the hard part.
+            The low-risk path is intentionally simple: point Terraform or OpenTofu at KiloLock as an HTTP backend and keep working. The deeper KiloLock features are there when query, history, conflict visibility, or smarter locking workflows become useful.
           </p>
         </div>
 
@@ -85,7 +85,7 @@
           <article class="card">
             <h3>Hosted backend</h3>
             <p>
-              If you want a managed service rather than operating the backend yourself, KiloLock Cloud offers a hosted path built on the same project foundation.
+              If you want a managed service rather than operating the backend yourself, KiloLock Cloud is the same idea hosted for teams that do not want to run PostgreSQL, backups, tokens, and access control themselves.
             </p>
           </article>
           <article class="card">
@@ -156,7 +156,7 @@
           </a>
           <a class="doc-card" href="https://kilolock.cloud">
             <strong>KiloLock Cloud</strong>
-            <span>A hosted backend path for teams that want managed operations.</span>
+            <span>Hosted KiloLock for teams that want managed operations without giving up the open-source core.</span>
           </a>
         </div>
       </div>
